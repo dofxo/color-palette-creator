@@ -12,7 +12,20 @@ import { deletePalette } from "../services/services";
 import { Delete } from "@mui/icons-material";
 import MainContext from "../context/mainContext";
 
-const Palette = ({ palleteInfo }: { palleteInfo: PaletteType }) => {
+const Palette = ({
+  paletteInfo,
+  setModalStatus,
+  setPaletteData,
+}: {
+  paletteInfo: PaletteType;
+  setModalStatus: React.Dispatch<React.SetStateAction<boolean>>;
+  setPaletteData: React.Dispatch<
+    React.SetStateAction<{
+      id: string;
+      paletteName: string;
+    }>
+  >;
+}) => {
   const { dispatch } = useContext(MainContext);
   return (
     <Card className="palette">
@@ -22,15 +35,18 @@ const Palette = ({ palleteInfo }: { palleteInfo: PaletteType }) => {
             <IconButton
               aria-label="settings"
               color="error"
-              onClick={async () => {
-                await deletePalette(palleteInfo.id ?? "");
-                dispatch({ type: "forceRender" });
+              onClick={() => {
+                setModalStatus((prev) => !prev);
+                setPaletteData({
+                  id: paletteInfo.id,
+                  paletteName: paletteInfo.paletteName,
+                });
               }}
             >
               <Delete />
             </IconButton>
           }
-          title={palleteInfo.paletteName ?? ""}
+          title={paletteInfo.paletteName ?? ""}
         />
       </CardContent>
       <CardActions>
