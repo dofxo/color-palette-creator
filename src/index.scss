@@ -7,3 +7,10 @@
   margin: 0 auto;
   width: 90vw;
 }
+
+.MuiCardHeader-title {
+  width: max-content;
+  text-overflow: ellipsis ellipsis;
+  overflow: hidden;
+  max-width: 150px;
+}

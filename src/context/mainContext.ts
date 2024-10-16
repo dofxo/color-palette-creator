@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { PaletteType, ActionType, StateType } from "../types/types";
+import { ActionType, StateType } from "../types/types";
 
 interface MainContextType {
   state: StateType;
