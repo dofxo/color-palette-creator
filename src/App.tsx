@@ -2,7 +2,7 @@ import MainContext from "./context/mainContext";
 import { useEffect, useReducer } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import { CreateNewTemplateButton, Pallets } from "./components";
+import { CreateNewPalette, Pallets } from "./components";
 import { getPalettesList } from "./services/services";
 import { ActionType, StateType } from "./types/types";
 
@@ -60,7 +60,7 @@ const App = () => {
             path="/"
             element={
               <>
-                <CreateNewTemplateButton />
+                <CreateNewPalette />
                 <Pallets />
               </>
             }

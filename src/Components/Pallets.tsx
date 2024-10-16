@@ -6,7 +6,7 @@ const Pallets = () => {
   const { state } = useContext(MainContext);
 
   return (
-    <section className="flex justify-center mt-10">
+    <section className="flex justify-center mt-10 container">
       <div className="grid grid-cols-5 gap-5">
         {state.paletts?.map((palette, id) => (
           <Palette key={id} palleteInfo={palette} />
