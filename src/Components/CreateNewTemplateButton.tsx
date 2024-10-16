@@ -4,7 +4,7 @@ import { useContext } from "react";
 import MainContext from "../context/mainContext";
 
 const CreateNewTemplateButton = () => {
-  const { createPaletteLoading, setCreatePaletteLoading } =
+  const { createPaletteLoading, setCreatePaletteLoading, paletts, setPaletts } =
     useContext(MainContext);
   return (
     <div className="container flex justify-center !mt-[20px]">
@@ -12,7 +12,9 @@ const CreateNewTemplateButton = () => {
         loading={createPaletteLoading}
         loadingPosition="center"
         variant="contained"
-        onClick={() => createNewTemplate(setCreatePaletteLoading)}
+        onClick={() =>
+          createNewTemplate(setCreatePaletteLoading, paletts, setPaletts)
+        }
       >
         create new template
       </LoadingButton>

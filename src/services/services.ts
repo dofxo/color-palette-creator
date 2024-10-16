@@ -9,3 +9,7 @@ export const getPalettesList = () => {
 export const createPalette = (data: PaletteType) => {
   return axios.post(`${dbUrl}/palettes`, data);
 };
+
+export const deletePalette = (id: string) => {
+  return axios.delete(`${dbUrl}/palettes/${id}`);
+};
