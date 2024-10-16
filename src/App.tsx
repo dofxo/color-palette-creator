@@ -1,16 +1,38 @@
 import MainContext from "./context/mainContext";
-import { useEffect, useState } from "react";
+import { useEffect, useReducer } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import { CreateNewTemplateButton, Pallets } from "./components";
-import { PaletteType } from "./types/types";
 import { getPalettesList } from "./services/services";
+import { ActionType, StateType } from "./types/types";
+
+const reducer = (state: StateType, action: ActionType) => {
+  switch (action.type) {
+    case "add":
+      return {
+        ...state,
+        paletts: action.payLoad,
+      };
+
+    case "forceRender":
+      return { ...state, forceRender: !state.forceRender };
+
+    case "createPaletteLoading":
+      return { ...state, createPaletteLoading: !state.createPaletteLoading };
+
+    default:
+      return state;
+  }
+};
 
 const App = () => {
-  const [createPaletteLoading, setCreatePaletteLoading] =
-    useState<boolean>(false);
-  const [paletts, setPaletts] = useState<PaletteType[]>([]);
-  const [forceRender, setForceRender] = useState(false);
+  const initialState: StateType = {
+    paletts: [],
+    forceRender: false,
+    createPaletteLoading: false,
+  };
+
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   // get pallets from server
   useEffect(() => {
@@ -18,21 +40,18 @@ const App = () => {
       try {
         const { data: pallets } = await getPalettesList();
 
-        setPaletts(pallets);
+        dispatch({ type: "add", payLoad: pallets });
       } catch (error) {
         console.error(error);
       }
     })();
-  }, [forceRender]);
+  }, [state.forceRender]);
 
   return (
     <MainContext.Provider
       value={{
-        createPaletteLoading,
-        setCreatePaletteLoading,
-        paletts,
-        setPaletts,
-        setForceRender,
+        state: state,
+        dispatch,
       }}
     >
       <main className="grid gap-[25px]">

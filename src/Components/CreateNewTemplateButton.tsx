@@ -4,17 +4,14 @@ import { useContext } from "react";
 import MainContext from "../context/mainContext";
 
 const CreateNewTemplateButton = () => {
-  const { createPaletteLoading, setCreatePaletteLoading, paletts, setPaletts } =
-    useContext(MainContext);
+  const { state, dispatch } = useContext(MainContext);
   return (
     <div className="container flex justify-center !mt-[20px]">
       <LoadingButton
-        loading={createPaletteLoading}
+        loading={state.createPaletteLoading}
         loadingPosition="center"
         variant="contained"
-        onClick={() =>
-          createNewTemplate(setCreatePaletteLoading, paletts, setPaletts)
-        }
+        onClick={() => createNewTemplate(state.paletts, dispatch)}
       >
         create new template
       </LoadingButton>

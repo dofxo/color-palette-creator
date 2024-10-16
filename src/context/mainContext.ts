@@ -1,19 +1,18 @@
 import { createContext } from "react";
-import { PaletteType } from "../types/types";
+import { PaletteType, ActionType, StateType } from "../types/types";
 
 interface MainContextType {
-  createPaletteLoading: boolean;
-  setCreatePaletteLoading: React.Dispatch<React.SetStateAction<boolean>>;
-  paletts: PaletteType[];
-  setPaletts: React.Dispatch<React.SetStateAction<PaletteType[]>>;
-  setForceRender: React.Dispatch<React.SetStateAction<boolean>>;
+  state: StateType;
+  dispatch: React.Dispatch<ActionType>;
 }
+
 const MainContext = createContext<MainContextType>({
-  createPaletteLoading: false,
-  setCreatePaletteLoading: () => {},
-  paletts: [],
-  setPaletts: () => {},
-  setForceRender: () => {},
+  state: {
+    forceRender: false,
+    createPaletteLoading: false,
+    paletts: [],
+  },
+  dispatch: () => {},
 });
 
 export default MainContext;

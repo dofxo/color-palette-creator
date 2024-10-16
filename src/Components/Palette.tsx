@@ -13,7 +13,7 @@ import { Delete } from "@mui/icons-material";
 import MainContext from "../context/mainContext";
 
 const Palette = ({ palleteInfo }: { palleteInfo: PaletteType }) => {
-  const { setForceRender } = useContext(MainContext);
+  const { dispatch } = useContext(MainContext);
   return (
     <Card className="palette">
       <CardContent>
@@ -23,8 +23,7 @@ const Palette = ({ palleteInfo }: { palleteInfo: PaletteType }) => {
               aria-label="settings"
               color="error"
               onClick={() => {
-                setForceRender((prev) => !prev);
-
+                dispatch({ type: "forceRender" });
                 //TODO: fix this
                 deletePalette(palleteInfo.id ?? "");
               }}
