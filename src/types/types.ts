@@ -8,9 +8,15 @@ export interface StateType {
   paletts: PaletteType[];
   forceRender: boolean;
   createPaletteLoading: boolean;
+  inputError: boolean;
 }
 
 export interface ActionType {
-  type: "add" | "forceRender" | "createPaletteLoading";
+  type:
+    | "add"
+    | "forceRender"
+    | "createPaletteLoading"
+    | "inputErrorFalse"
+    | "inputErrorTrue";
   payLoad?: any;
 }

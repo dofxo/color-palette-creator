@@ -20,6 +20,11 @@ const reducer = (state: StateType, action: ActionType) => {
     case "createPaletteLoading":
       return { ...state, createPaletteLoading: !state.createPaletteLoading };
 
+    case "inputErrorTrue":
+      return { ...state, inputError: true };
+    case "inputErrorFalse":
+      return { ...state, inputError: false };
+
     default:
       return state;
   }
@@ -30,6 +35,7 @@ const App = () => {
     paletts: [],
     forceRender: false,
     createPaletteLoading: false,
+    inputError: false,
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);

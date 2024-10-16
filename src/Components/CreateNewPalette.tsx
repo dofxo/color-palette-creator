@@ -9,17 +9,26 @@ const CreateNewPalette = () => {
 
   const { state, dispatch } = useContext(MainContext);
   return (
-    <div className="container flex flex-col gap-2 !max-w-[200px] justify-center !mt-[20px]">
-      <TextField size="small" inputRef={inputRef} />
+    <div className="container flex gap-5 flex-col !max-w-[250px] justify-center !mt-[20px]">
       <LoadingButton
         size="small"
         loading={state.createPaletteLoading}
         loadingPosition="center"
         variant="contained"
-        onClick={() => createNewPalette(state.paletts, dispatch, inputRef)}
+        onClick={() =>
+          createNewPalette(state.paletts, dispatch, inputRef, state)
+        }
       >
         create new template
       </LoadingButton>
+
+      <TextField
+        label={`${state.inputError ? "erorr" : ""}`}
+        size="small"
+        inputRef={inputRef}
+        error={state.inputError}
+        helperText={`${state.inputError ? "fill the input before submitting" : ""} `}
+      />
     </div>
   );
 };

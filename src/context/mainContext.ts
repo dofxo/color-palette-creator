@@ -11,6 +11,7 @@ const MainContext = createContext<MainContextType>({
     forceRender: false,
     createPaletteLoading: false,
     paletts: [],
+    inputError: false,
   },
   dispatch: () => {},
 });
