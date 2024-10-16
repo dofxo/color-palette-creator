@@ -22,10 +22,9 @@ const Palette = ({ palleteInfo }: { palleteInfo: PaletteType }) => {
             <IconButton
               aria-label="settings"
               color="error"
-              onClick={() => {
+              onClick={async () => {
+                await deletePalette(palleteInfo.id ?? "");
                 dispatch({ type: "forceRender" });
-                //TODO: fix this
-                deletePalette(palleteInfo.id ?? "");
               }}
             >
               <Delete />
