@@ -51,9 +51,11 @@ const Palette = ({
         <Colors colors={paletteInfo.colors} />
       </CardContent>
 
-      <CardActions>
+      <CardActions className="flex justify-center">
         <Button
+          className="w-full"
           size="small"
+          variant="contained"
           onClick={() => {
             navigate(`/editPalette/${paletteInfo.id}`);
           }}
