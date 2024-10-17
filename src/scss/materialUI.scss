@@ -1,0 +1,15 @@
+.MuiCardHeader-title {
+  width: max-content;
+  text-overflow: ellipsis ellipsis;
+  overflow: hidden;
+  max-width: 150px;
+  text-overflow: ellipsis ellipsis;
+}
+
+.MuiList-root {
+  width: 100%;
+}
+
+.MuiAlert-message {
+  width: max-content;
+}

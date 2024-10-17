@@ -7,10 +7,9 @@ import {
   CardHeader,
   IconButton,
 } from "@mui/material";
-import { useContext } from "react";
-import { deletePalette } from "../services/services";
 import { Delete } from "@mui/icons-material";
-import MainContext from "../context/mainContext";
+import { useNavigate } from "react-router-dom";
+import Colors from "./Colors";
 
 const Palette = ({
   paletteInfo,
@@ -26,7 +25,8 @@ const Palette = ({
     }>
   >;
 }) => {
-  const { dispatch } = useContext(MainContext);
+  const navigate = useNavigate();
+
   return (
     <Card className="palette">
       <CardContent>
@@ -48,9 +48,18 @@ const Palette = ({
           }
           title={paletteInfo.paletteName ?? ""}
         />
+        <Colors colors={paletteInfo.colors} />
       </CardContent>
+
       <CardActions>
-        <Button size="small">Edit Palette</Button>
+        <Button
+          size="small"
+          onClick={() => {
+            navigate(`/editPalette/${paletteInfo.id}`);
+          }}
+        >
+          Edit Palette
+        </Button>
       </CardActions>
     </Card>
   );

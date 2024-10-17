@@ -2,7 +2,7 @@ import MainContext from "./context/mainContext";
 import { useEffect, useReducer } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import { CreateNewPalette, Pallets } from "./components";
+import { CreateNewPalette, EditPalette, Pallets } from "./components";
 import { getPalettesList } from "./services/services";
 import { ActionType, StateType } from "./types/types";
 
@@ -71,6 +71,7 @@ const App = () => {
               </>
             }
           />
+          <Route path="/editPalette/:paletteId" element={<EditPalette />} />
           <Route path="*" element={<h2>Not Found</h2>} />
         </Routes>
       </main>

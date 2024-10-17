@@ -6,6 +6,10 @@ export const getPalettesList = () => {
   return axios.get(`${dbUrl}/palettes`);
 };
 
+export const getPalette = (id: string) => {
+  return axios.get(`${dbUrl}/palettes/${id}`);
+};
+
 export const createPalette = (data: PaletteType) => {
   return axios.post(`${dbUrl}/palettes`, data);
 };

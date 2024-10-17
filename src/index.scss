@@ -2,15 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "./scss/materialUI.scss";
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   width: 90vw;
 }
 
-.MuiCardHeader-title {
-  width: max-content;
-  text-overflow: ellipsis ellipsis;
-  overflow: hidden;
-  max-width: 150px;
+
+.button-wrapper {
+  button {
+    width: 100%;
+  }
 }

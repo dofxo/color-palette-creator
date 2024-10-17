@@ -3,22 +3,13 @@
     {
       "id": "3946de28-5bc6-4f09-8f82-fc7b760ae632",
       "paletteName": "blue shades",
-      "colors": []
-    },
-    {
-      "id": "893e2945-31ac-4a2e-afe4-e6260861b11a",
-      "paletteName": "awdawdawdawdawd",
-      "colors": []
-    },
-    {
-      "id": "4bf04237-6ec2-4bf9-a946-b38f55bfcd5f",
-      "paletteName": "awd",
-      "colors": []
-    },
-    {
-      "id": "d5fcc14e-ebab-471d-b418-993e424b8aca",
-      "paletteName": "awdaw",
-      "colors": []
+      "colors": [
+        "red",
+        "blue",
+        "yellow",
+        "#fff",
+        "#000"
+      ]
     }
   ]
 }
