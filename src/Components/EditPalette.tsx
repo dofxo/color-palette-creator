@@ -38,7 +38,13 @@ const EditPalette = () => {
           <ListItem disablePadding>
             <ListItemText
               primary="Colors:"
-              secondary={<Colors colors={paletteInfo.colors} />}
+              secondary={
+                <Colors
+                  colors={paletteInfo.colors}
+                  paletteInfo={paletteInfo}
+                  setPaletteInfo={setPaletteInfo}
+                />
+              }
             />
           </ListItem>
         </List>

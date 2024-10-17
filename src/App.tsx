@@ -26,18 +26,6 @@ const reducer = (state: StateType, action: ActionType) => {
     case "inputErrorFalse":
       return { ...state, inputError: false };
 
-    case "addNewColor":
-      const updatedPalettes = [...state.paletts].map((palette) => {
-        if (palette.id === action.payLoad.id) {
-          const colors = [...palette.colors, action.payLoad.value];
-          return { ...palette, colors };
-        } else {
-          return palette;
-        }
-      });
-
-      return { ...state, paletts: updatedPalettes };
-
     default:
       return state;
   }

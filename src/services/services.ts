@@ -21,3 +21,7 @@ export const deletePalette = (id: string) => {
 export const addColorToPalette = (id: string, data: PaletteType) => {
   return axios.put(`${dbUrl}/palettes/${id}`, data);
 };
+
+export const removeColor = (id: string, data: PaletteType) => {
+  return axios.put(`${dbUrl}/palettes/${id}`, data);
+};
