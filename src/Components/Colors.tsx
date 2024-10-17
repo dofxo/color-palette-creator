@@ -12,8 +12,8 @@ const Colors = ({
   isInEdit = false,
 }: {
   colors: string[];
-  paletteInfo: PaletteType;
-  setPaletteInfo: React.Dispatch<React.SetStateAction<PaletteType>>;
+  paletteInfo?: PaletteType;
+  setPaletteInfo?: React.Dispatch<React.SetStateAction<PaletteType>>;
   isInEdit?: boolean;
 }) => {
   const { dispatch } = useContext(MainContext);
@@ -28,6 +28,8 @@ const Colors = ({
               className="text-red-600 cursor-pointer"
               // remove color from color palette
               onClick={() => {
+                if (!(paletteInfo && setPaletteInfo)) return;
+
                 const updatedPaletteInfoColors = [...paletteInfo.colors];
 
                 updatedPaletteInfoColors.splice(id, 1);

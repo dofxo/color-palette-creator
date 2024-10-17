@@ -10,7 +10,7 @@ const Pallets = () => {
 
   return (
     <section className="flex justify-center mt-10 container">
-      <div className="grid grid-cols-5 gap-5">
+      <div className="flex flex-wrap justify-evenly gap-10">
         {state.paletts?.map((palette, id) => (
           <Palette
             key={id}

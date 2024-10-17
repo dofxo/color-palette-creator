@@ -1,11 +1,26 @@
 {
   "palettes": [
     {
-      "id": "a5681509-030f-489f-bf36-2fb50b5058de",
-      "paletteName": "new one",
+      "id": "50b97ba7-4715-48fa-944b-e10ab32dd2f6",
+      "paletteName": "red",
+      "colors": []
+    },
+    {
+      "id": "78608bd2-9773-452c-80ee-372c7e172194",
+      "paletteName": "re",
+      "colors": []
+    },
+    {
+      "id": "7f6eabfd-96e3-4855-a28a-73a3a68c118a",
+      "paletteName": "re",
       "colors": [
-        "#fcfcfc"
+        "red"
       ]
+    },
+    {
+      "id": "439c08bc-cc83-4691-a16f-52c92e185e8b",
+      "paletteName": "re",
+      "colors": []
     }
   ]
 }
