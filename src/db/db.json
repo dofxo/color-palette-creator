@@ -1,21 +1,3 @@
 {
-  "palettes": [
-    {
-      "id": "60d4d954-b694-4097-8b1c-a5b8d556708d",
-      "paletteName": "yellow",
-      "colors": [
-        "yellow"
-      ]
-    },
-    {
-      "id": "5f7d5d3d-c608-4035-9148-363d53bc2660",
-      "paletteName": "red",
-      "colors": []
-    },
-    {
-      "id": "00b5aab1-b631-4284-a71a-de2170532010",
-      "paletteName": "blue",
-      "colors": []
-    }
-  ]
+  "palettes": []
 }
