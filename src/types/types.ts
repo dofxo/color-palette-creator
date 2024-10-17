@@ -17,6 +17,7 @@ export interface ActionType {
     | "forceRender"
     | "createPaletteLoading"
     | "inputErrorFalse"
-    | "inputErrorTrue";
+    | "inputErrorTrue"
+    | "addNewColor";
   payLoad?: any;
 }
