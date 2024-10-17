@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { addColorToPalette, getPalette } from "../services/services";
 import { Button, List, ListItem, ListItemText, TextField } from "@mui/material";
 import { PaletteType } from "../types/types";
 import { ArrowBack } from "@mui/icons-material";
 import Colors from "./Colors";
+import MainContext from "../context/mainContext";
 
 const EditPalette = () => {
   const { paletteId } = useParams();
@@ -25,6 +26,8 @@ const EditPalette = () => {
   const inputRef = useRef<null | HTMLInputElement>(null);
   const navigate = useNavigate();
 
+  const { dispatch } = useContext(MainContext);
+
   return (
     <div className="grid place-items-center mt-10">
       <div className="container !max-w-[300px]">
@@ -40,6 +43,7 @@ const EditPalette = () => {
               primary="Colors:"
               secondary={
                 <Colors
+                  isInEdit={true}
                   colors={paletteInfo.colors}
                   paletteInfo={paletteInfo}
                   setPaletteInfo={setPaletteInfo}
@@ -86,6 +90,7 @@ const EditPalette = () => {
 
                     // update state
                     setPaletteInfo(updatedPaletteInfo);
+                    dispatch({ type: "forceRender" });
 
                     if (inputRef.current) inputRef.current.value = "";
                   }

@@ -3,7 +3,9 @@
     {
       "id": "a5681509-030f-489f-bf36-2fb50b5058de",
       "paletteName": "new one",
-      "colors": []
+      "colors": [
+        "#fcfcfc"
+      ]
     }
   ]
 }
