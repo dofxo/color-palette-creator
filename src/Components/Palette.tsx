@@ -28,7 +28,7 @@ const Palette = ({
   const navigate = useNavigate();
 
   return (
-    <Card className="palette">
+    <Card className="palette flex flex-col justify-between">
       <CardContent>
         <CardHeader
           action={
